@@ -1,6 +1,6 @@
-import type { Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
-import { NavbarClient } from "@/components/layout/NavbarClient";
+import type { Locale } from "@/src/lib/i18n/config";
+import { getDictionary } from "@/src/lib/i18n/dictionaries";
+import { NavbarClient } from "@/src/components/layout/NavbarClient";
 
 type NavbarProps = {
   locale: Locale;

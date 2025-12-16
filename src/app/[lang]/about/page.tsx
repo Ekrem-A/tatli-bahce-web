@@ -1,5 +1,5 @@
-import { getSiteSettings } from "@/lib/queries/settings";
-import { i18n, isLocale, type Locale } from "@/lib/i18n/config";
+import { getSiteSettings } from "@/src/lib/queries/settings";
+import { i18n, isLocale, type Locale } from "@/src/lib/i18n/config";
 
 type AboutPageProps = {
   params: any;

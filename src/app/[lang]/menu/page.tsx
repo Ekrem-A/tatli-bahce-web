@@ -1,8 +1,8 @@
-import { getMenuTree } from "@/lib/queries/menu";
-import type { MenuTreeItem } from "@/lib/queries/menu";
-import { getSiteSettings } from "@/lib/queries/settings";
-import { i18n, isLocale, type Locale } from "@/lib/i18n/config";
-import { MenuClient } from "@/components/menu/MenuClient";
+import { getMenuTree } from "@/src/lib/queries/menu";
+import type { MenuTreeItem } from "@/src/lib/queries/menu";
+import { getSiteSettings } from "@/src/lib/queries/settings";
+import { i18n, isLocale, type Locale } from "@/src/lib/i18n/config";
+import { MenuClient } from "@/src/components/menu/MenuClient";
 
 type MenuPageProps = {
   params: any;

@@ -1,4 +1,4 @@
-import { buildWhatsAppLink } from "@/lib/whatsapp";
+import { buildWhatsAppLink } from "@/src/lib/whatsapp";
 
 type WhatsAppButtonProps = {
   phoneNumber?: string;

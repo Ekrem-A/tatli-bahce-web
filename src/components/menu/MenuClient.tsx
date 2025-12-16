@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { MenuTreeItem } from "@/lib/queries/menu";
-import type { Locale } from "@/lib/i18n/config";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import type { MenuTreeItem } from "@/src/lib/queries/menu";
+import type { Locale } from "@/src/lib/i18n/config";
+import { WhatsAppButton } from "@/src/components/ui/WhatsAppButton";
 
 type MenuClientProps = {
   tree: MenuTreeItem[];
@@ -16,6 +16,34 @@ type CartItem = {
   name: string;
   price: number;
 };
+
+const SUBCATEGORY_ICONS: Record<string, string> = {
+  kahvalti: "🍳",
+  breakfast: "🍳",
+  corba: "🥣",
+  soup: "🥣",
+  izgara: "🍖",
+  grill: "🍖",
+  burger: "🍔",
+  pizza: "🍕",
+  meze: "🥗",
+  salad: "🥗",
+  salata: "🥗",
+  tatli: "🍰",
+  dessert: "🍰",
+  icecek: "🥤",
+  drinks: "🥤",
+  beverage: "🥤",
+  makarna: "🍝",
+  pasta: "🍝",
+  doner: "🥙",
+  pide: "🥙",
+};
+
+function getSubcategoryIcon(subcategory: { slug?: string; name?: string }) {
+  const key = (subcategory.slug ?? subcategory.name ?? "").toLowerCase();
+  return SUBCATEGORY_ICONS[key] ?? "📌";
+}
 
 function formatPrice(value: number) {
   return `${value.toLocaleString("tr-TR")} TL`;
@@ -182,9 +210,14 @@ export function MenuClient({ tree, locale, whatsappPhone }: MenuClientProps) {
               <ul className="divide-y divide-zinc-100">
                 {subcategories.map(({ subcategory, products }) => (
                   <li key={subcategory.id} className="py-3 first:pt-1 last:pb-1">
-                    <h3 className="text-sm font-semibold text-zinc-900">
-                      {subcategory.name}
-                    </h3>
+                    <div className="flex items-center gap-2">
+                      <span aria-hidden className="text-lg">
+                        {getSubcategoryIcon(subcategory)}
+                      </span>
+                      <h3 className="text-sm font-semibold text-zinc-900">
+                        {subcategory.name}
+                      </h3>
+                    </div>
                     <p className="mt-0.5 text-xs text-zinc-500">
                       {subcategory.description}
                     </p>

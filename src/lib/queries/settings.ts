@@ -1,5 +1,5 @@
-import { getServerClient } from "@/lib/supabaseClient";
-import type { SiteSetting } from "@/lib/types";
+import { getServerClient } from "@/src/lib/supabaseClient";
+import type { SiteSetting } from "@/src/lib/types";
 
 export type SiteSettingsMap = {
   [key: string]: string | null;

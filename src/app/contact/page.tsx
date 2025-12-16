@@ -1,5 +1,5 @@
-import { getSiteSettings } from "@/lib/queries/settings";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
+import { getSiteSettings } from "@/src/lib/queries/settings";
+import { buildWhatsAppLink } from "@/src/lib/whatsapp";
 
 import { redirect } from "next/navigation";
 

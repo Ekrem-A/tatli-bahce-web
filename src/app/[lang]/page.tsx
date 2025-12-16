@@ -1,9 +1,9 @@
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { getSiteSettings } from "@/lib/queries/settings";
-import { getServerClient } from "@/lib/supabaseClient";
-import type { ProductWithTranslations } from "@/lib/types";
-import { i18n, isLocale, type Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
+import { WhatsAppButton } from "@/src/components/ui/WhatsAppButton";
+import { getSiteSettings } from "@/src/lib/queries/settings";
+import { getServerClient } from "@/src/lib/supabaseClient";
+import type { ProductWithTranslations } from "@/src/lib/types";
+import { i18n, isLocale, type Locale } from "@/src/lib/i18n/config";
+import { getDictionary } from "@/src/lib/i18n/dictionaries";
 
 type HomePageProps = {
   params: any;

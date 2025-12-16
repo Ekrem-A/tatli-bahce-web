@@ -1,5 +1,5 @@
-import type { Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
+import type { Locale } from "@/src/lib/i18n/config";
+import { getDictionary } from "@/src/lib/i18n/dictionaries";
 
 type FooterProps = {
   locale: Locale;

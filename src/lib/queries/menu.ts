@@ -1,4 +1,4 @@
-import { getServerClient } from "@/lib/supabaseClient";
+import { getServerClient } from "@/src/lib/supabaseClient";
 import type {
   Category,
   CategoryTranslation,
@@ -9,7 +9,7 @@ import type {
   Product,
   ProductTranslation,
   ProductWithTranslations,
-} from "@/lib/types";
+} from "@/src/lib/types";
 
 export type MenuTreeItem = {
   category: CategoryWithTranslations;

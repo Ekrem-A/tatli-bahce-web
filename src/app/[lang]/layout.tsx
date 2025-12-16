@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { i18n, isLocale, type Locale } from "@/lib/i18n/config";
+import { Navbar } from "@/src/components/layout/Navbar";
+import { Footer } from "@/src/components/layout/Footer";
+import { i18n, isLocale, type Locale } from "@/src/lib/i18n/config";
 
 type LangLayoutProps = {
   children: ReactNode;

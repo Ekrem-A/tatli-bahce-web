@@ -1,7 +1,7 @@
 "use client";
 
-import type { Dictionary } from "@/lib/i18n/dictionaries";
-import type { Locale } from "@/lib/i18n/config";
+import type { Dictionary } from "@/src/lib/i18n/dictionaries";
+import type { Locale } from "@/src/lib/i18n/config";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
