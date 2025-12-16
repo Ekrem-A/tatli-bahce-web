@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { i18n } from "@/src/lib/i18n/config";
 
-
-export default function Home() {
-  return <div>Hello World</div>;
+export default function RootRedirect() {
+  redirect(`/${i18n.defaultLocale}`);
 }
+
