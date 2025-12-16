@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd tatli-bahce-web && npm run build",
+  "outputDirectory": "tatli-bahce-web/.next",
+  "installCommand": "cd tatli-bahce-web && npm install",
+  "framework": "nextjs"
+}
