@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "home": "Anasayfa",
+    "menu": "Menü",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "whatsapp": "WhatsApp ile sipariş"
+  },
+  "hero": {
+    "badge": "Aile restoranı • Tatlı Bahçe"
+  },
+  "footer": {
+    "tagline": "Sıcacık aile sofraları için her gün hizmetinizdeyiz."
+  }
+}
+
+

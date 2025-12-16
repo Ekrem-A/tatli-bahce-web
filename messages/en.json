@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "contact": "Contact",
+    "whatsapp": "Order via WhatsApp"
+  },
+  "hero": {
+    "badge": "Family Restaurant • Tatlı Bahçe"
+  },
+  "footer": {
+    "tagline": "Open every day for warm family tables."
+  }
+}
+
+

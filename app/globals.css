@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f5f4; /* açık, sıcak gri arka plan */
+  --foreground: #0f172a; /* koyu metin rengi */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* Tatlı Bahçe renk paleti */
+  --color-primary: #1ea44a; /* koyu yaprak yeşili */
+  --color-primary-soft: #4fdc6c; /* açık yeşil */
+  --color-accent: #d5a431; /* altın ton */
+  --color-card: #ffffff; /* kart arka planı: beyaz */
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
