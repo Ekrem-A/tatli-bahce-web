@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/i18n/config";
+import type { Locale } from "@/src/lib/i18n/config";
 import tr from "@/messages/tr.json";
 import en from "@/messages/en.json";
 
