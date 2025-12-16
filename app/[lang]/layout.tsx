@@ -9,6 +9,10 @@ type LangLayoutProps = {
   params: any;
 };
 
+export function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
 export default async function LangLayout({ children, params }: LangLayoutProps) {
   const resolvedParams = await params;
   const localeParam = resolvedParams?.lang ?? i18n.defaultLocale;
