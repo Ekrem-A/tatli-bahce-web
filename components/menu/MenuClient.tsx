@@ -17,35 +17,6 @@ type CartItem = {
   price: number;
 };
 
-// Basit ikon eşlemesi: slug ya da ad ile eşleşen kategoriye göre emoji
-const SUBCATEGORY_ICONS: Record<string, string> = {
-  kahvalti: "🍳",
-  breakfast: "🍳",
-  corba: "🥣",
-  soup: "🥣",
-  izgara: "🍖",
-  grill: "🍖",
-  burger: "🍔",
-  pizza: "🍕",
-  meze: "🥗",
-  salad: "🥗",
-  salata: "🥗",
-  tatli: "🍰",
-  dessert: "🍰",
-  icecek: "🥤",
-  drinks: "🥤",
-  beverage: "🥤",
-  makarna: "🍝",
-  pasta: "🍝",
-  doner: "🥙",
-  pide: "🥙",
-};
-
-function getSubcategoryIcon(subcategory: { slug?: string; name?: string }) {
-  const key = (subcategory.slug ?? subcategory.name ?? "").toLowerCase();
-  return SUBCATEGORY_ICONS[key] ?? "📌";
-}
-
 function formatPrice(value: number) {
   return `${value.toLocaleString("tr-TR")} TL`;
 }
@@ -167,23 +138,21 @@ export function MenuClient({ tree, locale, whatsappPhone }: MenuClientProps) {
         </p>
       </header>
 
-      <div className="sticky top-[73px] z-10 -mx-4 bg-white/95 px-4 py-3 backdrop-blur md:-mx-6 md:px-6">
-        <div className="flex flex-wrap gap-2">
-          {tree.map(({ category }) => (
-            <button
-              key={category.id}
-              type="button"
-              onClick={() => setActiveCategoryId(category.id)}
-              className={`rounded-full border px-4 py-2 text-xs font-medium shadow-sm transition ${
-                activeCategoryId === category.id
-                  ? "border-primary bg-primary text-white shadow-primary/40"
-                  : "border-primary/30 bg-white text-zinc-800 hover:border-primary hover:bg-primary/10"
-              }`}
-            >
-              {category.name}
-            </button>
-          ))}
-        </div>
+      <div className="flex flex-wrap gap-2">
+        {tree.map(({ category }) => (
+          <button
+            key={category.id}
+            type="button"
+            onClick={() => setActiveCategoryId(category.id)}
+            className={`rounded-full border px-4 py-2 text-xs font-medium shadow-sm transition ${
+              activeCategoryId === category.id
+                ? "border-primary bg-primary text-white shadow-primary/40"
+                : "border-primary/30 bg-white text-zinc-800 hover:border-primary hover:bg-primary/10"
+            }`}
+          >
+            {category.name}
+          </button>
+        ))}
       </div>
 
       <div className="grid gap-6">
@@ -213,14 +182,9 @@ export function MenuClient({ tree, locale, whatsappPhone }: MenuClientProps) {
               <ul className="divide-y divide-zinc-100">
                 {subcategories.map(({ subcategory, products }) => (
                   <li key={subcategory.id} className="py-3 first:pt-1 last:pb-1">
-                    <div className="flex items-center gap-2">
-                      <span aria-hidden className="text-lg">
-                        {getSubcategoryIcon(subcategory)}
-                      </span>
-                      <h3 className="text-sm font-semibold text-zinc-900">
-                        {subcategory.name}
-                      </h3>
-                    </div>
+                    <h3 className="text-sm font-semibold text-zinc-900">
+                      {subcategory.name}
+                    </h3>
                     <p className="mt-0.5 text-xs text-zinc-500">
                       {subcategory.description}
                     </p>

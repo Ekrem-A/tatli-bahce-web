@@ -6,10 +6,6 @@ type ContactPageProps = {
   params: any;
 };
 
-export function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
-}
-
 export default async function ContactPage({ params }: ContactPageProps) {
   const resolvedParams = await params;
   const langParam = resolvedParams?.lang ?? i18n.defaultLocale;
@@ -120,17 +116,16 @@ export default async function ContactPage({ params }: ContactPageProps) {
               <div className="absolute inset-0 flex items-center justify-center text-xs text-zinc-500">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.3785473532757!2d29.070476675514417!3d41.01697341889025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac86db24105e1%3A0xf328918e7271cd4e!2zVGF0bMSxIEJhaMOnZQ!5e0!3m2!1str!2str!4v1765907011401!5m2!1str!2str"
-                  width="600"
-                  height="450"
+                  width={600}
+                  height={450}
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title={locale === "tr" ? "Tatlı Bahçe Konumu" : "Tatli Bahce Location"}
-                  className="h-full w-full border-0"
+                  title="Tatlı Bahçe Konumu (Yerleşik Harita)"
                 />
               </div>
-            )}
+              )}
           </div>
         </section>
       </div>

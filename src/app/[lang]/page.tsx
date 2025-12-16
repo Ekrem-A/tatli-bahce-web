@@ -9,10 +9,6 @@ type HomePageProps = {
   params: any;
 };
 
-export function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
-}
-
 export default async function Home({ params }: HomePageProps) {
   const resolvedParams = await params;
   const langParam = resolvedParams?.lang ?? i18n.defaultLocale;
